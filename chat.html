@@ -6,146 +6,37 @@
     </header>
     <body>
     <style type='text/css'>
-        .chatHeaderBranding {
-            background-color: #333 !important;
-        }
-        
-        h2[lwc-56vbshdpqil] {
-            visibility: hidden !important;
-        }
-        
-        /*chat with me css*/
-        .helpButtonEnabled {
-          color: #000 !important;
-          border-top-left-radius: 5px !important;
-          border-top-right-radius: 5px !important;
-          position: fixed !important;
-          right: 10px !important;
-          bottom: 0 !important;
-          height: 34px !important;
-          line-height: 1.5 !important;
-          font-size: 14px !important;
-          text-align: center !important;
-          margin: 0 auto !important;
-          width: fit-content !important;
-          max-width: 500px !important;
-          background-color: #ffd200;
-          vertical-align: middle !important;
-          cursor: pointer !important;
-          box-shadow: 0 2px 3px 1px rgb(0 0 0 / 20%) !important;
-        }
-        
-        .forceCommunityEmbeddedServiceHelpButton .flatButton {
-          background-color: #ffd300 !important;
-          color: #121111 !important;
-          line-height: 25px !important;
-          text-transform: capitalize !important;
-          font-weight: bold !important;
-        }
-        
-        .embeddedServiceIcon svg {
-          fill: #181717 !important;
-          margin-top: -8px !important;
-        }
-        
-        .forceCommunityEmbeddedServiceHelpButton .help svg {
-          height: 40px !important;
-        }
-        
-        .forceCommunityEmbeddedServiceHelpButton {
-          height: 30px !important;
-        }
-        
-        
-        /*** minimized chat with me*/
         .embeddedServiceHelpButton .helpButton .uiButton {
-          min-width: fit-content !important;
-          max-width: 14em !important;
-          color: #000 !important;
-          border-top-left-radius: 5px !important;
-          border-top-right-radius: 5px !important;
-          position: fixed !important;
-          right: 10px !important;
-          bottom: 0 !important;
-          height: 34px !important;
-          line-height: 1.5 !important;
-          font-size: 14px !important;
-          text-align: center !important;
-          margin: 0 auto !important;
-          width: fit-content !important;
-          max-width: 500px !important;
-          background-color: #ffd200;
-          vertical-align: middle !important;
-          cursor: pointer !important;
-          box-shadow: 0 2px 3px 1px rgb(0 0 0 / 20%) !important;
-        } 
-        
-        
-        .embeddedServiceSidebarMinimizedDefaultUI .messageContent {
-          max-width: fit-content !important;
-          text-transform: capitalize !important;
-          font-weight: bold !important;
-        }
-        
-        .embeddedServiceSidebarMinimizedDefaultUI .embeddedServiceIcon {
-            position: relative !important;
-            z-index: 1 !important;
-            line-height: 0 !important;
-            font-size: 1.5em !important;
-            margin-top: 5px !important;
-        }
-        
-        .embeddedServiceSidebarMinimizedDefaultUI.helpButton {
-          background-color: #ffd300 !important;
-          border-color: #ffd300 !important;
-          min-width: fit-content !important;
-          max-width: 14em !important;
-        }
-        
-        .embeddedServiceSidebarMinimizedDefaultUI.helpButton .messageContent {
-          justify-content: center !important;
-        }
-        
-        .embeddedServiceSidebarMinimizedDefaultUI .minimizedText {
-          max-width:  fit-content !important;
-          display: flex !important;
-          justify-content: center !important;
-          align-items: center !important;
-          font-size: 14px !important;
-          line-height: normal !important;
-          overflow: hidden !important;
-          white-space: nowrap !important;
-          text-overflow: ellipsis !important;
-          margin-top: 0px !important;
-        }
-        
-        .embeddedServiceSidebarMinimizedDefaultUI .content {
-          width: fit-content !important;
-        }
-        
-        .embeddedServiceSidebarMinimizedDefaultUI .minimizedText {
-          color: black !important;
-        }
-        
-        /**Prefill form*/
-        .table-container[c-prechatCase_prechatCase] {
-            height: fit-content;
-        }
-        
-        /*header chat resize toogle*/
-        button.with-image {
-            background-image: url(https://www.zebra.com/etc/clientlibs/zebra-www-responsive/commons/chaticons/zebra-max-icon-white-32x32.png);
-            height: 23px;
-            background-color: #333 !important;
-            border: 0;
-            opacity: .7;
-            font: 13px Arial,Helvetica,sans-serif;
-            line-height: 1.42857;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0 12px !important;
+            height: 40px !important;
+            box-shadow: 0 0 12px 0 rgba(0,0,0,0.5);
+            border-radius: 23px;
+            line-height: 1;
+            background: #ffd200 !important;
+            font-size: 0.875em;
+            color: #0c0c0c !important;
+            font-weight: normal;
+            text-shadow: none;
+            font-family: inherit;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
             display: flex;
-            background-size: 100% 100%;
-            width: 23px;
-        }
-      </style>
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+    </style>
       
       <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
       <script type='text/javascript'>
