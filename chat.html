@@ -1,7 +1,8 @@
 <html>
 <head>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<script>          
 	window.addEventListener("message", receiveMessage, false);
@@ -14,75 +15,98 @@
 	</script>
 	
 </head>
-   <style type='text/css'>
-	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #ffd200 !important; 
-		font-family: Arial,Helvetica,sans-serif !important; 
-	}
-	.embeddedServiceHelpButton .helpButton .uiButton {
-		color: #080808 !important; 
-		font-weight: 790 !important;
-		background: #ffd300 !important;
-		 margin-top: 15px !important;
-	}
-	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #328ED4;
-	}
-	.embeddedServiceHelpButton .embeddedServiceIcon {
-		margin-top: -10px !important;
-	}
-</style>
-
-<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
-<script type='text/javascript'>
-	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-
-		embedded_svc.settings.defaultMinimizedText = 'Chat with us'; //(Defaults to Chat with an Expert)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
-
-		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
-		// Settings for Chat
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-			// Returns a valid button ID.
-		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-
-		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-		embedded_svc.settings.entryFeature = 'LiveAgent';
-
-		embedded_svc.init(
-			'https://zebra--ebots.sandbox.my.salesforce.com',
-			'https://zebra--ebots.sandbox.my.site.com/ebots',
-			gslbBaseURL,
-			'00D7h0000004jTO',
-			'ZCom_Sales_Agents',
-			{
-				baseLiveAgentContentURL: 'https://c.la3-c1cs-ia5.salesforceliveagent.com/content',
-				deploymentId: '5727h0000008REc',
-				buttonId: '5737h0000008R4w',
-				baseLiveAgentURL: 'https://d.la3-c1cs-ia5.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'ZCom_Sales_Agents',
-				isOfflineSupportEnabled: true
-			}
-		);
-	};
-
-	if (!window.embedded_svc) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://zebra--ebots.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-		s.onload = function() {
-			initESW(null);
+<body>
+	   <style type='text/css'>
+		.embeddedServiceHelpButton .helpButton .uiButton {
+			background-color: #ffd200 !important; 
+			font-family: Arial,Helvetica,sans-serif !important; 
+		}
+		.embeddedServiceHelpButton .helpButton .uiButton {
+			color: #080808 !important; 
+			font-weight: 790 !important;
+			background: #ffd300 !important;
+			 margin-top: 15px !important;
+		}
+		.embeddedServiceHelpButton .helpButton .uiButton:focus {
+			outline: 1px solid #328ED4;
+		}
+		.embeddedServiceHelpButton .embeddedServiceIcon {
+			margin-top: -10px !important;
+		}
+	</style>
+	
+	<div id="lightningout"></div>
+	
+	    <script src="<My Domain URL>/lightning/lightning.out.js"></script>
+	    <script>
+	      $Lightning.use(
+		'c:LightningOutDependencyApp', // name of the Lightning app
+		function () {
+		  // Callback once framework and app loaded
+		  $Lightning.createComponent(
+		    'c:prechatCase', // top-level component of your app
+		    {}, // attributes to set on the component when created
+		    'lightningout', // the DOM location to insert the component
+		    function (cmp) {
+		      // callback when component is created and active on the page
+		    }
+		  );
+		},
+		'<Experience Site URL>' // Site endpoint
+	      );
+	    </script>	
+	
+	<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+	<script type='text/javascript'>
+		var initESW = function(gslbBaseURL) {
+			embedded_svc.settings.displayHelpButton = true; //Or false
+			embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+	
+			embedded_svc.settings.defaultMinimizedText = 'Chat with us'; //(Defaults to Chat with an Expert)
+			//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+	
+			//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+			//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+	
+			// Settings for Chat
+			//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+				// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+				// Returns a valid button ID.
+			//};
+			//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+			//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+			//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+	
+			embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+			embedded_svc.settings.entryFeature = 'LiveAgent';
+	
+			embedded_svc.init(
+				'https://zebra--ebots.sandbox.my.salesforce.com',
+				'https://zebra--ebots.sandbox.my.site.com/ebots',
+				gslbBaseURL,
+				'00D7h0000004jTO',
+				'ZCom_Sales_Agents',
+				{
+					baseLiveAgentContentURL: 'https://c.la3-c1cs-ia5.salesforceliveagent.com/content',
+					deploymentId: '5727h0000008REc',
+					buttonId: '5737h0000008R4w',
+					baseLiveAgentURL: 'https://d.la3-c1cs-ia5.salesforceliveagent.com/chat',
+					eswLiveAgentDevName: 'ZCom_Sales_Agents',
+					isOfflineSupportEnabled: true
+				}
+			);
 		};
-		document.body.appendChild(s);
-	} else {
-		initESW('https://service.force.com');
-	}
-</script>
+	
+		if (!window.embedded_svc) {
+			var s = document.createElement('script');
+			s.setAttribute('src', 'https://zebra--ebots.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+			s.onload = function() {
+				initESW(null);
+			};
+			document.body.appendChild(s);
+		} else {
+			initESW('https://service.force.com');
+		}
+	</script>
+</body>
 </html>
