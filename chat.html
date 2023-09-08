@@ -41,11 +41,13 @@
 		var initESW = function(gslbBaseURL) {
 			embedded_svc.settings.displayHelpButton = true; //Or false
 
-			window.onload = function() {
-		            var urlParams = new URLSearchParams(window.location.search);
-		            var languageParam = urlParams.get('lang');
-		            console.log("Language Parameter *** :", languageParam);
-			 };
+
+		    var urlParams = new URLSearchParams(window.location.search);
+		    var languageParam = urlParams.get('lang');
+			
+		    console.log("Language Parameter *** :", languageParam);
+		    console.log("urlParams *** :", urlParams);
+
 			
 			console.log("Language Parameter:", languageParam);
 			
