@@ -120,8 +120,8 @@
 		        };
 		
 		        // Set the language from the parameter or use 'de' as the default language
-		        var selectedLanguage = languageParam || 'ko'; // Default to 'de' if no language parameter is found
-			embedded_svc.settings.language = languageParam || 'ko'; // Default to 'en' if no language parameter is found
+		        var selectedLanguage = languageParam || 'en'; // Default to 'de' if no language parameter is found
+			embedded_svc.settings.language = languageParam || 'en'; // Default to 'en' if no language parameter is found
 
 		        // Get the defaultMinimizedText value based on the selected language
 		        embedded_svc.settings.defaultMinimizedText = languageConfig[selectedLanguage]["Chat with Sales"]["text"];
