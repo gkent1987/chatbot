@@ -46,14 +46,17 @@
 		   
 	</style>
 
-	 <script>
+	  <script>
 	        document.addEventListener('DOMContentLoaded', function () {
-	            const icons = document.querySelectorAll('.embeddedServiceIcon');
-	
-	            icons.forEach((icon) => {
-	                icon.addEventListener('click', function () {
-	                    // Toggle the display property between "none" and "inline-block"
-	                    icon.style.display = icon.style.display === 'none' ? 'inline-block' : 'none';
+	            document.addEventListener('click', function (event) {
+	                console.log('Click event fired.'); // Add this line to log the event
+	                const icons = document.querySelectorAll('.embeddedServiceIcon');
+	                icons.forEach((icon) => {
+	                    // Check if the clicked element is not one of the icons
+	                    if (event.target !== icon) {
+	                        // Toggle the display property between "none" and "inline-block"
+	                        icon.style.display = icon.style.display === 'none' ? 'inline-block' : 'none';
+	                    }
 	                });
 	            });
 	        });
