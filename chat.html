@@ -49,6 +49,7 @@
 	 <script>
 		document.addEventListener('click', function (event) {
 		    console.log('Click event fired.');
+			console.log('Clicked element:', event.target);
 		    if (event.target.classList.contains('embeddedServiceIcon')) {
 			// Toggle the display property between "none" and "inline-block"
 			console.log('event.target.style.display');
