@@ -45,23 +45,14 @@
 		}
 		   
 	</style>
-
-	  <script>
-	        document.addEventListener('DOMContentLoaded', function () {
-	            document.addEventListener('click', function (event) {
-	                console.log('Click event fired.'); // Add this line to log the event
-	                const icons = document.querySelectorAll('.embeddedServiceIcon');
-	                icons.forEach((icon) => {
-	                    // Check if the clicked element is not one of the icons
-	                    if (event.target !== icon) {
-	                        // Toggle the display property between "none" and "inline-block"
-	                        icon.style.display = icon.style.display === 'none' ? 'inline-block' : 'none';
-	                    }
-	                });
-	            });
-	        });
-	</script>
-
+	
+	 <script>
+		document.addEventListener('click', function (event) {
+		    console.log('Click event fired.');
+		    // Rest of your code...
+		});
+	 </script>
+	  
 	<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 	<script type='text/javascript'>
 		var initESW = function(gslbBaseURL) {
