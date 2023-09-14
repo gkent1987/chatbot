@@ -34,7 +34,27 @@
 		.embeddedServiceHelpButton .embeddedServiceIcon {
 			margin-top: -10px !important;
 		}
+		.embeddedServiceHelpButton .uiButton {
+		    max-width: 50em !important;
+		}
+		.embeddedServiceHelpButton .uiButton .helpButtonLabel .message {
+		    margin-bottom: 10px !important;
+		}
+		   
 	</style>
+
+	 <script>
+	        document.addEventListener('DOMContentLoaded', function () {
+	            const icons = document.querySelectorAll('.embeddedServiceIcon');
+	
+	            icons.forEach((icon) => {
+	                icon.addEventListener('click', function () {
+	                    // Toggle the display property between "none" and "inline-block"
+	                    icon.style.display = icon.style.display === 'none' ? 'inline-block' : 'none';
+	                });
+	            });
+	        });
+	</script>
 
 	<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 	<script type='text/javascript'>
