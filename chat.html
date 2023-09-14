@@ -39,84 +39,92 @@
 	<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 	<script type='text/javascript'>
 		var initESW = function(gslbBaseURL) {
-			embedded_svc.settings.displayHelpButton = true; //Or false
+		    embedded_svc.settings.displayHelpButton = true; //Or false
 
 
 		    var urlParams = new URLSearchParams(window.location.search);
 		    var languageParam = urlParams.get('lang');
 			
-		    //console.log("window.location.search *** :", window.location.search);
-		   // console.log("urlParams *** :", urlParams);
-		    //console.log("Language Parameter *** :", languageParam);
-			
-			
 			// Define the language configuration object
 		        var languageConfig = {
-		            "en": {
-		                "Chat with Sales": {
-		                    "text": "Chat with us"
-		                }
-		            },
-		            "zh-Hans": {
-		                "Chat with Sales": {
-		                    "text": "与我们聊天"
-		                }
-		            },
-		            "pt": {
-		                "Chat with Sales": {
-		                    "text": "Fale conosco"
-		                }
-		            },
-		            "es-la": {
-		                "Chat with Sales": {
-		                    "text": "Hable con nosotros"
-		                }
-		            },
-		            "es-es": {
-		                "Chat with Sales": {
-		                    "text": "Chatee con nosotros"
-		                }
-		            },
-		            "ja": {
-		                "Chat with Sales": {
-		                    "text": "チャットサービス"
-		                }
-		            },
-		            "ko": {
-		                "Chat with Sales": {
-		                    "text": "영업팀과 채팅"
-		                }
-		            },
-		            "de": {
-		                "Chat with Sales": {
-		                    "text": "Chatten Sie mit uns"
-		                }
-		            },
-		            "fr": {
-		                "Chat with Sales": {
-		                    "text": "Tchatter avec nous"
-		                }
-		            },
-		            "it": {
-		                "Chat with Sales": {
-		                    "text": "Chatta con noi"
-		                }
-		            },
-		            "pl": {
-		                "Chat with Sales": {
-		                    "text": "Czatuj z nami "
-		                }
-		            },
-		            "ru": {
-		                "Chat with Sales": {
-		                    "text": "Свяжитесь с нами в чате"
-		                }
-		            },
-		            "tr": {
-		                "Chat with Sales": {
-		                    "text": "Bizimle sohbet edin"
-		                }
-		            }
+		           "en": {
+			    "Chat with Sales": {
+			      "text": "Chat with us",
+			      "Loading": "Loading..."
+			    }
+			  },
+			  "zh-Hans": {
+			    "Chat with Sales": {
+			      "text": "与我们聊天",
+			      "Loading": "加载中..."
+			    }
+			  },
+			  "pt": {
+			    "Chat with Sales": {
+			      "text": "Fale conosco",
+			      "Loading": "Carregando..."
+			    }
+			  },
+			  "es-la": {
+			    "Chat with Sales": {
+			      "text": "Hable con nosotros",
+			      "Loading": "Cargando..."
+			    }
+			  },
+			  "es-es": {
+			    "Chat with Sales": {
+			      "text": "Chatee con nosotros",
+			      "Loading": "Cargando..."
+			    }
+			  },
+			  "ja": {
+			    "Chat with Sales": {
+			      "text": "チャットサービス",
+			      "Loading": "読み込み中..."
+			    }
+			  },
+			  "ko": {
+			    "Chat with Sales": {
+			      "text": "영업팀과 채팅",
+			      "Loading": "로딩 중..."
+			    }
+			  },
+			  "de": {
+			    "Chat with Sales": {
+			      "text": "Chatten Sie mit uns",
+			      "Loading": "Laden..."
+			    }
+			  },
+			  "fr": {
+			    "Chat with Sales": {
+			      "text": "Tchatter avec nous",
+			      "Loading": "Chargement..."
+			    }
+			  },
+			  "it": {
+			    "Chat with Sales": {
+			      "text": "Chatta con noi",
+			      "Loading": "Caricamento..."
+			    }
+			  },
+			  "pl": {
+			    "Chat with Sales": {
+			      "text": "Czatuj z nami",
+			      "Loading": "Ładowanie..."
+			    }
+			  },
+			  "ru": {
+			    "Chat with Sales": {
+			      "text": "Свяжитесь с нами в чате",
+			      "Loading": "Загрузка..."
+			    }
+			  },
+			  "tr": {
+			    "Chat with Sales": {
+			      "text": "Bizimle sohbet edin",
+			      "Loading": "Yükleniyor..."
+			    }
+			  }
 		        };
 		
 		        // Set the language from the parameter or use 'de' as the default language
@@ -125,12 +133,13 @@
 
 		        // Get the defaultMinimizedText value based on the selected language
 		        embedded_svc.settings.defaultMinimizedText = languageConfig[selectedLanguage]["Chat with Sales"]["text"];
+			embedded_svc.settings.loadingText = languageConfig[selectedLanguage]["Loading..."]["Loading"];
 
 		       //embedded_svc.settings.defaultMinimizedText = 'Chat with us'; //(Defaults to Chat with an Expert)
 
 			//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 	
-			//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+			
 			//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
 	
 			// Settings for Chat
