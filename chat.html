@@ -148,12 +148,18 @@
 		        };
 		
 		        // Set the language from the parameter or use 'de' as the default language
-		        var selectedLanguage = languageParam || 'ja'; // Default to 'de' if no language parameter is found
-			embedded_svc.settings.language = 'nl_NL'; // Default to 'en' if no language parameter is found
-
-		        // Get the defaultMinimizedText value based on the selected language
-		        embedded_svc.settings.defaultMinimizedText = languageConfig[selectedLanguage]["Chat with Sales"]["text"];
-			embedded_svc.settings.loadingText = languageConfig[selectedLanguage]["Chat with Sales"]["Loading"];
+			var selectedLanguage = languageParam || 'ja'; // Default to 'ja' if no language parameter is found
+			embedded_svc.settings.language = 'pt_PT'; // Use the selectedLanguage as the language setting
+			
+			// Check if the selected language exists in languageConfig, otherwise, use a default language
+			if (languageConfig[selectedLanguage] && languageConfig[selectedLanguage]["Chat with Sales"]) {
+			    embedded_svc.settings.defaultMinimizedText = languageConfig[selectedLanguage]["Chat with Sales"]["text"];
+			    embedded_svc.settings.loadingText = languageConfig[selectedLanguage]["Chat with Sales"]["Loading"];
+			} else {
+			    // Provide default values or handle the case when the language is not found
+			    embedded_svc.settings.defaultMinimizedText = "Chat with us"; // Default text
+			    embedded_svc.settings.loadingText = "Loading..."; // Default loading text
+			}
 
 		       //embedded_svc.settings.defaultMinimizedText = 'Chat with us'; //(Defaults to Chat with an Expert)
 
