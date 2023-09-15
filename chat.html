@@ -112,7 +112,7 @@
 			  "ko": {
 			    "Chat with Sales": {
 			      "text": "영업팀과 채팅",
-			      "Loading": "로딩 중..."
+			      "Loading": "로딩 중...",
 				  "language": "ko" //beta
 			    }
 			  },
@@ -162,7 +162,7 @@
 		
 		        // Set the language from the parameter or use 'de' as the default language
 			var selectedLanguage = languageParam || 'ja'; // Default to 'ja' if no language parameter is found
-			var mappedlanguage = languageConfig[selectedLanguage]["Chat with Sales"]["language"];
+			var mappedlanguage = languageConfig[selectedLanguage]?.["Chat with Sales"]?.["language"] || 'en_US'; // Use a default if language not found
 			
 			// Check if the selected language exists in languageConfig, otherwise, use a default language
 			if (languageConfig[selectedLanguage] && languageConfig[selectedLanguage]["Chat with Sales"]) {
