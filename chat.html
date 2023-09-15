@@ -169,8 +169,10 @@
 			    embedded_svc.settings.defaultMinimizedText = languageConfig[selectedLanguage]["Chat with Sales"]["text"];
 			    embedded_svc.settings.loadingText = languageConfig[selectedLanguage]["Chat with Sales"]["Loading"];
 			    embedded_svc.settings.language = mappedlanguage;
+			    console.log('mappedlanguage ' + mappedlanguage);
 			} else {
 			    // Provide default values or handle the case when the language is not found
+		            console.log('set default mappedlanguage ' + mappedlanguage);
 			    embedded_svc.settings.defaultMinimizedText = "Chat with us"; // Default text
 			    embedded_svc.settings.loadingText = "Loading..."; // Default loading text
 			    embedded_svc.settings.language = 'en_US';
