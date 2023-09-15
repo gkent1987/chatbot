@@ -162,13 +162,13 @@
 		
 		        // Set the language from the parameter or use 'de' as the default language
 			var selectedLanguage = languageParam || 'ja'; // Default to 'ja' if no language parameter is found
-			
+			var mappedlanguage = languageConfig[selectedLanguage]["Chat with Sales"]["language"];
 			
 			// Check if the selected language exists in languageConfig, otherwise, use a default language
 			if (languageConfig[selectedLanguage] && languageConfig[selectedLanguage]["Chat with Sales"]) {
 			    embedded_svc.settings.defaultMinimizedText = languageConfig[selectedLanguage]["Chat with Sales"]["text"];
 			    embedded_svc.settings.loadingText = languageConfig[selectedLanguage]["Chat with Sales"]["Loading"];
-			    embedded_svc.settings.language = languageConfig[selectedLanguage]["Chat with Sales"]["language"];
+			    embedded_svc.settings.language = mappedlanguage;
 			} else {
 			    // Provide default values or handle the case when the language is not found
 			    embedded_svc.settings.defaultMinimizedText = "Chat with us"; // Default text
