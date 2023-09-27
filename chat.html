@@ -17,7 +17,8 @@
 	
 </head>
 <body> 
-	   <style type='text/css'>
+	  
+	<style type='text/css'>
 		.embeddedServiceHelpButton .helpButton .uiButton {
 			background-color: #ffd200 !important; 
 			font-family: Arial,Helvetica,sans-serif !important; 
@@ -48,132 +49,17 @@
 		    });
 		});
 	 </script>
-	  
+
 	<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 	<script type='text/javascript'>
 		var initESW = function(gslbBaseURL) {
-		    embedded_svc.settings.displayHelpButton = true; //Or false
-
-
-		    var urlParams = new URLSearchParams(window.location.search);
-		    var languageParam = urlParams.get('lang');
-			
-			// Define the language configuration object
-		        var languageConfig = {
-		      "en": {
-			    "Chat with Sales": {
-			      "text": "Chat with us",
-			      "Loading": "Loading...",
-				  "language": "en_US"
-			    }
-			  },
-			  "zh-Hans": {
-			    "Chat with Sales": {
-			      "text": "与我们聊天",
-			      "Loading": "加载中...",
-				  "language": "zh_CN"
-			    }
-			  },
-			  "pt": {
-			    "Chat with Sales": {
-			      "text": "Fale conosco",
-			      "Loading": "Carregando...",
-				  "language": "pt_PT"
-			    }
-			  },
-			  "es-la": {
-			    "Chat with Sales": {
-			      "text": "Hable con nosotros",
-			      "Loading": "Cargando...",
-				   "language": "en_US" //default english
-			    }
-			  },
-			  "es-es": {
-			    "Chat with Sales": {
-			      "text": "Chatee con nosotros",
-			      "Loading": "Cargando...",
-				  "language": "es"
-			    }
-			  },
-			  "ja": {
-			    "Chat with Sales": {
-			      "text": "チャットサービス",
-			      "Loading": "読み込み中...",
-				  "language": "ja"
-			    }
-			  },
-			  "ko": {
-			    "Chat with Sales": {
-			      "text": "영업팀과 채팅",
-			      "Loading": "로딩 중...",
-				  "language": "ko" //beta
-			    }
-			  },
-			  "de": {
-			    "Chat with Sales": {
-			      "text": "Chatten Sie mit uns",
-			      "Loading": "Laden...",
-				  "language": "de"
-			    }
-			  },
-			  "fr": {
-			    "Chat with Sales": {
-			      "text": "Tchatter avec nous",
-			      "Loading": "Chargement...",
-				  "language": "fr"
-			    }
-			  },
-			  "it": {
-			    "Chat with Sales": {
-			      "text": "Chatta con noi",
-			      "Loading": "Caricamento...",
-				  "language": "it"
-			    }
-			  },
-			  "pl": {
-			    "Chat with Sales": {
-			      "text": "Czatuj z nami",
-			      "Loading": "Ładowanie...",
-				  "language": "en_US" //default english
-			    }
-			  },
-			  "ru": {
-			    "Chat with Sales": {
-			      "text": "Свяжитесь с нами в чате",
-			      "Loading": "Загрузка...",
-				  "language": "ru"
-			    }
-			  },
-			  "tr": {
-			    "Chat with Sales": {
-			      "text": "Bizimle sohbet edin",
-			      "Loading": "Yükleniyor...",
-				  "language": "en_US" //default english
-			    }
-			  }
-			};
-		
-		        // Set the language from the parameter or use 'de' as the default language
-			var selectedLanguage = languageParam || 'ja'; // Default to 'ja' if no language parameter is found
-			var mappedlanguage = languageConfig[selectedLanguage]?.["Chat with Sales"]?.["language"] || 'en_US'; // Use a default if language not found
-			
-			// Check if the selected language exists in languageConfig, otherwise, use a default language
-			if (languageConfig[selectedLanguage] && languageConfig[selectedLanguage]["Chat with Sales"]) {
-			    embedded_svc.settings.defaultMinimizedText = languageConfig[selectedLanguage]["Chat with Sales"]["text"];
-			    embedded_svc.settings.loadingText = languageConfig[selectedLanguage]["Chat with Sales"]["Loading"];
-			    embedded_svc.settings.language = mappedlanguage;
-			} else {
-			    // Provide default values or handle the case when the language is not found
-		            console.log('set default mappedlanguage ' + mappedlanguage);
-			    embedded_svc.settings.defaultMinimizedText = "Chat with us"; // Default text
-			    embedded_svc.settings.loadingText = "Loading..."; // Default loading text
-			}
-
-		       //embedded_svc.settings.defaultMinimizedText = 'Chat with us'; //(Defaults to Chat with an Expert)
-
+			embedded_svc.settings.displayHelpButton = true; //Or false
+			embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+	
+			//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
 			//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 	
-			
+			//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
 			//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
 	
 			// Settings for Chat
@@ -216,5 +102,7 @@
 			initESW('https://service.force.com');
 		}
 	</script>
+
+	
 </body>
 </html>
