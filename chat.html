@@ -195,21 +195,7 @@
 			embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 			embedded_svc.settings.entryFeature = 'LiveAgent';
 	
-			embedded_svc.init(
-				'https://zebra--ebots.sandbox.my.salesforce.com',
-				'https://zebra--ebots.sandbox.my.site.com/ebots',
-				gslbBaseURL,
-				'00D7h0000004jTO',
-				'ZCom_Sales_Agents',
-				{
-					baseLiveAgentContentURL: 'https://c.la3-c1cs-ia5.salesforceliveagent.com/content',
-					deploymentId: '5727h0000008REc',
-					buttonId: '5737h0000008R4w',
-					baseLiveAgentURL: 'https://d.la3-c1cs-ia5.salesforceliveagent.com/chat',
-					eswLiveAgentDevName: 'ZCom_Sales_Agents',
-					isOfflineSupportEnabled: true
-				}
-			);
+			
 		};
 	
 		if (!window.embedded_svc) {
